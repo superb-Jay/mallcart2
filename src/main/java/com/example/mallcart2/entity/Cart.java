@@ -1,16 +1,14 @@
 package com.example.mallcart2.entity;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "prac_cart")
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

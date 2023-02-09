@@ -1,6 +1,7 @@
 package com.example.mallcart2.controller;
 
 
+import com.example.mallcart2.dto.CartAmountRequest;
 import com.example.mallcart2.dto.CartDeleteRequestDTO;
 import com.example.mallcart2.dto.CartResponseDTO;
 import com.example.mallcart2.service.CartService;
@@ -23,6 +24,12 @@ public class CartController {
     @DeleteMapping("/cart")
     public String deleteCart(CartDeleteRequestDTO cartDeleteRequestDTO) {
         return cartService.deleteCart(cartDeleteRequestDTO);
+    }
+
+
+    @PatchMapping("/cart/amount")
+    public String amountCart(CartAmountRequest cartAmountRequest) {
+        return cartService.amountCart(cartAmountRequest);
     }
 
 
