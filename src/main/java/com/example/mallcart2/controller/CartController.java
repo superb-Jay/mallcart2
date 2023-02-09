@@ -1,11 +1,11 @@
 package com.example.mallcart2.controller;
 
 
+import com.example.mallcart2.dto.CartDeleteRequestDTO;
 import com.example.mallcart2.dto.CartResponseDTO;
 import com.example.mallcart2.service.CartService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +20,10 @@ public class CartController {
         return cartService.selectCart();
     }
 
+    @DeleteMapping("/cart")
+    public String deleteCart(CartDeleteRequestDTO cartDeleteRequestDTO) {
+        return cartService.deleteCart(cartDeleteRequestDTO);
+    }
 
 
 }

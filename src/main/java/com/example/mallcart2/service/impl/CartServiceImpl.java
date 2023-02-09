@@ -1,5 +1,6 @@
 package com.example.mallcart2.service.impl;
 
+import com.example.mallcart2.dto.CartDeleteRequestDTO;
 import com.example.mallcart2.dto.CartResponseDTO;
 import com.example.mallcart2.entity.Cart;
 import com.example.mallcart2.repository.CartRepository;
@@ -28,4 +29,18 @@ public class CartServiceImpl implements CartService {
                 .collect(Collectors.toList());
 
     }
+
+    @Override
+    public String deleteCart(CartDeleteRequestDTO cartDeleteRequestDTO) {
+
+        try {
+            cartRepository.delete(cartDeleteRequestDTO.toEntity());
+        }catch (Exception e) {
+            return "failed";
+        }
+
+        return "success";
+    }
+
+
 }
